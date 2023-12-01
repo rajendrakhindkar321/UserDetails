@@ -69,9 +69,16 @@ public class UserDetailsUI extends JFrame {
 
             preparedStatement.executeUpdate();
             JOptionPane.showMessageDialog(null, "User details saved successfully!");
+            clearFields(); // Call method to clear input fields
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
         }
+    }
+
+    private void clearFields() {
+        nameField.setText("");
+        addressField.setText("");
+        mobileField.setText("");
     }
 
     public static void main(String[] args) {
